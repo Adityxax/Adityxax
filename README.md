@@ -1,13 +1,9 @@
-Hola Amigo👋
-- I'm Aditya 
-- Currently pursuing "Computer Science Engineering"
+<h1 align="center">Hola 👋, I'm Aditya</h1>
 <h3 align="center">Training models, breaking code, fixing both. AI/ML • Computer Vision • Real-time Systems Python • C++ • OpenCV • PyTorch • YOLO</h3>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/></a> </p>
+- 📫Mail : **officialadi2003@gmail.com**
 
--📫Mail : **officialadi2003@gmail.com**
-
--⚡ **I optimize ML pipelines by day and debug my own life decisions by night.**
+- ⚡ **I optimize ML pipelines by day and debug my own life decisions by night.**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
@@ -25,5 +21,4 @@ Hola Amigo👋
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=adityxax&show_icons=true&locale=en" alt="adityxax" /></p>
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=adityxax&" alt="adityxax" /></p>
-
 
