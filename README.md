@@ -5,9 +5,9 @@ Hola Amigo👋
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/></a> </p>
 
-📫Mail : **officialadi2003@gmail.com**
+-📫Mail : **officialadi2003@gmail.com**
 
-⚡ **I optimize ML pipelines by day and debug my own life decisions by night.**
+-⚡ **I optimize ML pipelines by day and debug my own life decisions by night.**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
