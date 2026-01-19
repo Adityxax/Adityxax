@@ -1,16 +1,13 @@
 Hola Amigo👋
 - I'm Aditya 
 - Currently pursuing "Computer Science Engineering"
-- ⚡Fun fact: I'm fluent in English and Sarcasm.
-
-
 <h3 align="center">Training models, breaking code, fixing both. AI/ML • Computer Vision • Real-time Systems Python • C++ • OpenCV • PyTorch • YOLO</h3>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=adityxax" alt="adityxax" /></a> </p>
+<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/></a> </p>
 
-- 📫Mail : **officialadi2003@gmail.com**
+📫Mail : **officialadi2003@gmail.com**
 
-- ⚡ **I optimize ML pipelines by day and debug my own life decisions by night.**
+⚡ **I optimize ML pipelines by day and debug my own life decisions by night.**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
