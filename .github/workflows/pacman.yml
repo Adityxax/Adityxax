@@ -39,6 +39,14 @@ jobs:
           echo "Dist contents:"
           ls -la dist
 
+      - name: Force arcade black theme
+        run: |
+          echo "Styling SVG..."
+          sed -i 's/#0d1117/#000000/g' dist/pacman-contribution-graph.svg || true
+          sed -i 's/#161b22/#000000/g' dist/pacman-contribution-graph.svg || true
+          sed -i 's/fill=\"#161b22\"/fill=\"#000000\"/g' dist/pacman-contribution-graph.svg || true
+          sed -i 's/stroke=\"[^\"]*\"/stroke=\"#ffffff\"/g' dist/pacman-contribution-graph.svg || true
+
       - name: Deploy to output branch (pacman folder)
         uses: peaceiris/actions-gh-pages@v3
         with:
