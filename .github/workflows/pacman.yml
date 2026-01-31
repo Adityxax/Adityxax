@@ -26,13 +26,15 @@ jobs:
           node-version: 18
 
       - name: Generate pacman SVG
-        uses: abozanona/pacman-contribution-graph@v1
+        uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: Adityxax
           output: dist
 
       - name: Debug output folder
-        run: ls -la dist
+        run: |
+          echo "Listing dist folder:"
+          ls -la dist || echo "dist folder not found"
 
       - name: Deploy to output branch (pacman folder)
         uses: peaceiris/actions-gh-pages@v3
