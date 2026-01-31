@@ -26,17 +26,10 @@ jobs:
           github_user_name: Adityxax
           output: dist
 
-      - name: Force black background + white maze
-        run: |
-          sed -i 's/#0d1117/#000000/g' dist/pacman-contribution-graph.svg || true
-          sed -i 's/#161b22/#000000/g' dist/pacman-contribution-graph.svg || true
-          sed -i 's/stroke=\"[^\"]*\"/stroke=\"#ffffff\"/g' dist/pacman-contribution-graph.svg || true
-
-      - name: Deploy to output branch
+      - name: Deploy to output branch (pacman folder)
         uses: peaceiris/actions-gh-pages@v3
         with:
-             github_token: ${{ secrets.GITHUB_TOKEN }}
-             publish_branch: output
-             publish_dir: dist
-             destination_dir: pacman
-
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: output
+          publish_dir: dist
+          destination_dir: pacman
