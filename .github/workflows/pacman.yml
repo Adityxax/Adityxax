@@ -29,12 +29,15 @@ jobs:
         uses: abozanona/pacman-contribution-graph@main
         with:
           github_user_name: Adityxax
-          output: dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Debug output folder
+      - name: Prepare dist folder
         run: |
-          echo "Listing dist folder:"
-          ls -la dist || echo "dist folder not found"
+          mkdir -p dist
+          # Find the generated SVG and move it into dist
+          find . -name "pacman-contribution-graph.svg" -exec mv {} dist/ \;
+          echo "Dist contents:"
+          ls -la dist
 
       - name: Deploy to output branch (pacman folder)
         uses: peaceiris/actions-gh-pages@v3
