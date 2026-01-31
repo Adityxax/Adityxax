@@ -40,13 +40,21 @@ jobs:
           ls -la dist
 
       # 🔥 THIS IS THE ARCADE SKIN STEP
-      - name: Force arcade black theme
+      - name: Force arcade black theme (CSS override)
         run: |
-          echo "Styling SVG..."
-          sed -i 's/#0d1117/#000000/g' dist/pacman-contribution-graph.svg || true
-          sed -i 's/#161b22/#000000/g' dist/pacman-contribution-graph.svg || true
-          sed -i 's/fill=\"#161b22\"/fill=\"#000000\"/g' dist/pacman-contribution-graph.svg || true
-          sed -i 's/stroke=\"[^\"]*\"/stroke=\"#ffffff\"/g' dist/pacman-contribution-graph.svg || true
+          echo "Injecting custom CSS into SVG..."
+
+          sed -i '1s|^|<style>\
+          svg { background: #000000 !important; }\
+          rect { fill: #000000 !important; }\
+          path, line { stroke: #ffffff !important; }\
+          .day { fill: #000000 !important; }\
+          .day[data-level=\"1\"] { fill: #00ff55 !important; }\
+          .day[data-level=\"2\"] { fill: #00cc44 !important; }\
+          .day[data-level=\"3\"] { fill: #009933 !important; }\
+          .day[data-level=\"4\"] { fill: #006622 !important; }\
+          </style>\n|' dist/pacman-contribution-graph.svg
+
 
       - name: Deploy to output branch (pacman folder)
         uses: peaceiris/actions-gh-pages@v3
