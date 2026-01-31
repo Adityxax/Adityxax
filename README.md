@@ -62,7 +62,9 @@
 
 <br clear="both">
 
-<img src="https://raw.githubusercontent.com/Adityxax/Adityxax/output/snake.svg" />
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Adityxax/Adityxax/output/pacman/pacman-contribution-graph-dark.svg" />
+</p>
 
 ###
 
