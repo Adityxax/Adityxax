@@ -39,6 +39,7 @@ jobs:
           echo "Dist contents:"
           ls -la dist
 
+      # 🔥 THIS IS THE ARCADE SKIN STEP
       - name: Force arcade black theme
         run: |
           echo "Styling SVG..."
