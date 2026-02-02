@@ -2,7 +2,7 @@ name: Generate pacman animation
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 */3 * * *"
   workflow_dispatch:
   push:
     branches:
@@ -35,7 +35,7 @@ jobs:
         run: |
           mkdir -p dist
           # Find the generated SVG and move it into dist
-          find . -name "pacman-contribution-graph.svg" -exec mv {} dist/ \;
+          find . -name "*.svg" -maxdepth 4 -exec mv {} dist/ \;
           echo "Dist contents:"
           ls -la dist
 
