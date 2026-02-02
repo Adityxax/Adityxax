@@ -2,7 +2,7 @@ name: Generate pacman animation
 
 on:
   schedule:
-    - cron: "0 */3 * * *"
+    - cron: "0 */6 * * *"
   workflow_dispatch:
   push:
     branches:
@@ -34,12 +34,11 @@ jobs:
       - name: Prepare dist folder
         run: |
           mkdir -p dist
-          # Find the generated SVG and move it into dist
-          find . -name "*.svg" -maxdepth 4 -exec mv {} dist/ \;
+          find . -name "pacman-contribution-graph.svg" -exec mv {} dist/ \;
           echo "Dist contents:"
           ls -la dist
 
-      # 🔥 THIS IS THE ARCADE SKIN STEP
+      # 🕶️ DARK MODE ARCADE SKIN
       - name: Force arcade black theme (CSS override)
         run: |
           echo "Injecting custom CSS into SVG..."
@@ -55,6 +54,10 @@ jobs:
           .day[data-level=\"4\"] { fill: #006622 !important; }\
           </style>\n|' dist/pacman-contribution-graph.svg
 
+      # 🔁 SAVE AS DARK VERSION
+      - name: Save as dark version
+        run: |
+          cp dist/pacman-contribution-graph.svg dist/pacman-contribution-graph-dark.svg
 
       - name: Deploy to output branch (pacman folder)
         uses: peaceiris/actions-gh-pages@v3
