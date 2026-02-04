@@ -35,7 +35,7 @@ jobs:
           echo "Dist contents:"
           ls -la dist
 
-      # 🕶️ DARK MODE ARCADE SKIN (XML-SAFE)
+      # 🕶️ DARK MODE ARCADE SKIN (VISIBLE GRID + XML SAFE)
       - name: Force arcade black theme (CSS override)
         run: |
           echo "Injecting custom CSS into SVG..."
@@ -45,7 +45,7 @@ jobs:
           svg { background: #000000 !important; }\
           rect { fill: #000000 !important; }\
           path, line { stroke: #ffffff !important; }\
-          .day { fill: #000000 !important; }\
+          .day { fill: #002b1a !important; }\
           .day[data-level="1"] { fill: #00ff55 !important; }\
           .day[data-level="2"] { fill: #00cc44 !important; }\
           .day[data-level="3"] { fill: #009933 !important; }\
