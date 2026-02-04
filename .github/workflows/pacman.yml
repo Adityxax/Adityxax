@@ -4,9 +4,6 @@ on:
   schedule:
     - cron: "0 */6 * * *"
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 permissions:
   contents: write
@@ -34,7 +31,7 @@ jobs:
       - name: Prepare dist folder
         run: |
           mkdir -p dist
-          find . -name "pacman-contribution-graph.svg" -exec mv {} dist/ \;
+          find . -name "pacman-contribution-graph.svg" -exec mv {} dist/pacman-contribution-graph.svg \;
           echo "Dist contents:"
           ls -la dist
 
@@ -54,10 +51,11 @@ jobs:
           .day[data-level=\"4\"] { fill: #006622 !important; }\
           </style>\n|' dist/pacman-contribution-graph.svg
 
-      # 🔁 SAVE AS DARK VERSION
-      - name: Save as dark version
+      # 🌑 RENAME + DELETE LIGHT VERSION
+      - name: Keep only dark version
         run: |
-          cp dist/pacman-contribution-graph.svg dist/pacman-contribution-graph-dark.svg
+          mv dist/pacman-contribution-graph.svg dist/pacman-contribution-graph-dark.svg
+          ls -la dist
 
       - name: Deploy to output branch (pacman folder)
         uses: peaceiris/actions-gh-pages@v3
