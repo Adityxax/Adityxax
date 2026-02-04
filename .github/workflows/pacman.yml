@@ -35,21 +35,19 @@ jobs:
           echo "Dist contents:"
           ls -la dist
 
-      # 🕶️ DARK MODE ARCADE SKIN (VISIBLE GRID, NO TILE NUKE)
-      - name: Force arcade black theme (CSS override)
+      # 🕶️ DARK MODE ARCADE SKIN (INLINE COLOR KILLER)
+      - name: Force arcade black theme (SVG rewrite)
         run: |
-          echo "Injecting custom CSS into SVG..."
+          echo "Rewriting SVG colors..."
 
-          sed -i '/<svg[^>]*>/a \
-          <style>\
-          svg { background: #000000 !important; }\
-          path, line { stroke: #ffffff !important; }\
-          .day { fill: #002b1a !important; }\
-          .day[data-level="1"] { fill: #00ff55 !important; }\
-          .day[data-level="2"] { fill: #00cc44 !important; }\
-          .day[data-level="3"] { fill: #009933 !important; }\
-          .day[data-level="4"] { fill: #006622 !important; }\
-          </style>' dist/pacman-contribution-graph.svg
+          # Empty tiles → dark green
+          sed -i 's/fill="#ebedf0"/fill="#002b1a"/g' dist/pacman-contribution-graph.svg
+
+          # Contribution levels → neon greens
+          sed -i 's/data-level="1" fill="#9be9a8"/data-level="1" fill="#00ff55"/g' dist/pacman-contribution-graph.svg
+          sed -i 's/data-level="2" fill="#40c463"/data-level="2" fill="#00cc44"/g' dist/pacman-contribution-graph.svg
+          sed -i 's/data-level="3" fill="#30a14e"/data-level="3" fill="#009933"/g' dist/pacman-contribution-graph.svg
+          sed -i 's/data-level="4" fill="#216e39"/data-level="4" fill="#006622"/g' dist/pacman-contribution-graph.svg
 
       # 🌑 KEEP ONLY DARK VERSION
       - name: Keep only dark version
