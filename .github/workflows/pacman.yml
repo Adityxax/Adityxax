@@ -35,23 +35,24 @@ jobs:
           echo "Dist contents:"
           ls -la dist
 
-      # 🕶️ DARK MODE ARCADE SKIN
+      # 🕶️ DARK MODE ARCADE SKIN (XML-SAFE)
       - name: Force arcade black theme (CSS override)
         run: |
           echo "Injecting custom CSS into SVG..."
 
-          sed -i '1s|^|<style>\
+          sed -i '/<svg[^>]*>/a \
+          <style>\
           svg { background: #000000 !important; }\
           rect { fill: #000000 !important; }\
           path, line { stroke: #ffffff !important; }\
           .day { fill: #000000 !important; }\
-          .day[data-level=\"1\"] { fill: #00ff55 !important; }\
-          .day[data-level=\"2\"] { fill: #00cc44 !important; }\
-          .day[data-level=\"3\"] { fill: #009933 !important; }\
-          .day[data-level=\"4\"] { fill: #006622 !important; }\
-          </style>\n|' dist/pacman-contribution-graph.svg
+          .day[data-level="1"] { fill: #00ff55 !important; }\
+          .day[data-level="2"] { fill: #00cc44 !important; }\
+          .day[data-level="3"] { fill: #009933 !important; }\
+          .day[data-level="4"] { fill: #006622 !important; }\
+          </style>' dist/pacman-contribution-graph.svg
 
-      # 🌑 RENAME + DELETE LIGHT VERSION
+      # 🌑 KEEP ONLY DARK VERSION
       - name: Keep only dark version
         run: |
           mv dist/pacman-contribution-graph.svg dist/pacman-contribution-graph-dark.svg
