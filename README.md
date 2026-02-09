@@ -46,7 +46,8 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/Adityxax/Adityxax/output/snake.svg" />
 </p>
-
-###
+<div align="center">
+**Thanks for visiting my profile! Feel free to explore my repositories and drop a ⭐ if you find something interesting!**
+<div/>
 
 
